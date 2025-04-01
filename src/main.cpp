@@ -29,6 +29,9 @@ int main(int argc, char* argv[])
       std::system("clear");
       t.show_winner();
       break;
+    case 4:
+      t.todo_game();
+      break;
     }
   }
   return 0;

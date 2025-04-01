@@ -23,4 +23,5 @@ public:
   void add_todo_item();
   void show_all_tasks();
   void show_winner();
+  void todo_game();
 };

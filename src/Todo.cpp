@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <iterator>
 #include <vector>
 
 Todo::Todo() {}
@@ -40,8 +41,36 @@ void Todo::show_winner()
             return a.importance < b.importance;
         });
 
-if (mostImportant != todoList.end())
+ if (mostImportant != todoList.end())
+ {
+   std::cout << mostImportant->taskName << "\n" << mostImportant->importance;
+ }
+}
+
+void Todo::todo_game()
 {
-  std::cout << mostImportant->taskName << "\n" << mostImportant->importance;
-}
-}
+  std::vector<TodoItems> todos = todoList;
+
+  int z = -1;
+  
+  for (size_t i = 0; i < todos.size(); i++)
+  {
+    if (todos.size() <= 1)
+    {
+      std::cout << todos[i].taskName << " is the winner! :D" << "\n";
+      return;
+    }
+    std::cout << "[1]" << todos[i].taskName << "\n" << "[2]" << todos[i++].taskName << "\n";
+    std::cin >> z;
+
+    switch (z)
+    {
+    case 1:
+      todos.erase(todos.begin()+1);
+      break;
+    case 2:
+      todos.erase(todos.begin());
+      break;
+    }
+  }
+}    
