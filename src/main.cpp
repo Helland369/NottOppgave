@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
   std::system("clear");
   for (;;)
   {
-    std::cout << "\n[1] Add todo item\n" << "[2] Show all task\n" << "[3] Show winner\n" << "[0] Exit\n";
+    std::cout << "\n[1] Add todo item\n" << "[2] Show all task\n" << "[3] Show winner\n" << "[4] Todo game\n" << "[0] Exit\n";
     std::cin >> x;
     switch (x) {
     case 0:
